@@ -1,0 +1,74 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TaxApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- NOTA PARA LA TRADUCCIÓN:
+            Para traducir las cadenas mostradas, copia sus valores a las claves con el nombre
+            correspondiente en el archivo de recursos del idioma neutro (AppResources.resx) de la aplicación y
+            reemplaza el valor de texto codificado de forma rígida entre las comillas de los atributos
+            con la cláusula de enlace cuya ruta de acceso apunte a ese nombre de cadena.
+
+            Por ejemplo:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            Este enlace apunta al recurso de cadena de la plantilla denominado "ApplicationTitle".
+
+            Al agregar idiomas admitidos en la pestaña Propiedades del proyecto se creará un
+            nuevo archivo resx por idioma que puede contener los valores traducidos de las
+            cadenas de la interfaz de usuario. El enlace de estos ejemplos hará que el valor de los atributos
+            se tome del archivo .resx correspondiente al valor de
+            CurrentUICulture de la aplicación en tiempo de ejecución.
+         -->
+
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <Rectangle x:Name="Cromatica" Margin="0,-30,0,0" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFF00B9" Offset="0.178"/>
+                    <GradientStop Color="White" Offset="0.539"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <StackPanel x:Name="Titulos" Grid.Row="0" Margin="12,17,0,28" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="Nom_App" Text="TaxApp" Margin="12,0" TextAlignment="Center" FontFamily="Assets/Fonts/LCDMB.TTF#LCDMono" FontSize="36"/>
+            <TextBlock x:Name="Slogan" Text="¡Justo lo que debes pagar!" Margin="9,-7,0,0" FontFamily="Assets/Fonts/LCDMB.TTF#LCDMono" FontSize="32" TextAlignment="Center"/>
+        </StackPanel>
+        <Button x:Name="Informacion" Content="Informacion" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Click="Informacion_Click" FontFamily="Assets/Fonts/LCDMB.TTF#LCDMono" Height="69" Width="171" FontSize="20" FontWeight="Bold" Grid.Row="1" Margin="0,28,0,0"/>
+        <Button x:Name="TaxApp" Content="TaxApp" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Click="TaxApp_Click" FontFamily="Assets/Fonts/LCDMB.TTF#LCDMono" FontWeight="Bold" Grid.Row="1" Margin="0,26,0,0"/>
+        <TextBlock x:Name="LogoCDMX" Text="TAXI CDMX" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Margin="144,377,141,240" Grid.Row="1" FontWeight="Bold" FontSize="36" FontFamily="Arial" Foreground="Black" Height="41" Width="195"/>
+        <TextBox x:Name="Info" Margin="2,412,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" InputScope="Url" FontFamily="Times New Roman" FontSize="18" FontStyle="Italic" Text="Información: En el siguiente enlace, usted puede consultar las tarifas oficiales que cada tipo de transporte público del Distrito Federal tiene asignado:&#xA;&#xA; http://www7.df.gob.mx/wb/stv/nuevas_tarifas_de_trasporte_publico_vigentes &#xA;&#xA; Presione el botón &quot;Infomación&quot; para ocultar el mensaje.&#xD;&#xA;Pulse el Botón &quot;TaxApp&quot; para ir a la Aplicación." HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" TextAlignment="Center" HorizontalAlignment="Center" Width="478" Height="235" Visibility="Collapsed"/>
+        <Image x:Name="TaxiPhoto" HorizontalAlignment="Left" Height="155" Margin="27,217,0,0" Grid.Row="1" VerticalAlignment="Top" Width="439" Source="/Imagenes/Imagen2.png" Stretch="Fill"/>
+
+        <!--ContentPanel. Colocar aquí el contenido adicional-->
+
+        <!--Quitar la marca de comentarios para ver una cuadrícula de alineación que
+            ayuda a comprobar que los controles están alineados en los límites normales.  La imagen tiene un margen superior de -32px para
+            tener en cuenta la bandeja del sistema. Establécelo en 0 (o quite el margen)
+            si la bandeja del sistema está oculta.
+
+            Antes de enviarla, quita este código XAML y la propia imagen.-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+    </Grid>
+
+</phone:PhoneApplicationPage>
